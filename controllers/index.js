@@ -42,12 +42,12 @@ module.exports.displayServicesPage = (req, res, next) => {
   });
 };
 
-module.exports.displayContactPage = (req, res, next) => {
-  res.render("contact", {
-    title: "Contact",
-    displayName: req.user ? req.user.displayName : "",
-  });
-};
+// module.exports.displayContactPage = (req, res, next) => {
+//   res.render("contact", {
+//     title: "Contact",
+//     displayName: req.user ? req.user.displayName : "",
+//   });
+// };
 
 module.exports.displayContactPage = (req, res, next) => {
   res.render("contact", {

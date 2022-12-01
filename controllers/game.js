@@ -24,7 +24,7 @@ module.exports.displayGameInfo = (req, res, next) => {
 
 module.exports.addpage = (req, res, next) => {
   res.render("bracket", {
-    title: "Add Game",
+    title: "Add Bracket",
     displayName: req.user ? req.user.displayName : "",
   });
 };
@@ -49,6 +49,10 @@ module.exports.addprocesspage = (req, res, next) => {
 };
 
 module.exports.displayeditpage = (req, res, next) => {
+  res.render("bracket", {
+    title: "Edit Bracket",
+    displayName: req.user ? req.user.displayName : "",
+  });
   let id = req.params.id; //id of actual object
 
   Game.findById(id, (err, gametoedit) => {
@@ -58,7 +62,7 @@ module.exports.displayeditpage = (req, res, next) => {
     } else {
       //show the edit view
       res.render("bracket", {
-        title: "Edit Game",
+        title: "Edit Bracket",
         game: gametoedit,
         displayName: req.user ? req.user.displayName : "",
       });
